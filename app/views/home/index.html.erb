@@ -1,2 +1,11 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1><span class="awesomesauce">Awesomesauce</span> makes you make yourself happy!</h1>
+
+<% emmons = Citation.new("http://psycnet.apa.org/journals/psp/84/2/377/", "2003 Emmons and McCullough", "Emmons, Robert A.; McCullough, Michael E. <b>Counting blessings versus burdens: An experimental investigation of gratitude and subjective well-being in daily life.</b> Journal of Personality and Social Psychology, Vol 84(2), Feb 2003, 377-389. doi: 10.1037/0022-3514.84.2.377") %>
+<p>Research in positive psychology suggests that "a conscious focus on blessings may have emotional and interpersonal benefits" <%=   emmons.cite_short.html_safe %> But for most of us, Facebook simply isn't the best outlet for counting our blessings - not all things we are grateful for are popular and/or ready for public consumption.</p>
+<p><strong>But we sometimes forget about the little things that make our lives good.</strong></p>
+<p><span class="awesomesauce">Awesomesauce</span> ensures that you never forget to be thankful again. We'll e-mail you every afternoon to ask, "What are you grateful today?" Whatever you respond with - text, picture, article, a YouTube video - it will archive. When you're feeling down, you'll be able to glance at the things you love about your life - and feel better again.</p>
+
+<div class="works_cited">
+<h2>Works cited</h2>
+<ol><li><%= emmons.cite_long.html_safe %></li></ol>
+</div>
