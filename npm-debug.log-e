@@ -1,0 +1,45 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'bower', '-g' ]
+info using npm@1.0.106
+info using node@v0.5.11-pre
+verbose config file /Users/Simon/.npmrc
+verbose config file /usr/local/etc/npmrc
+verbose config file /usr/local/lib/node_modules/npm/npmrc
+verbose into /usr/local/lib [ 'bower' ]
+verbose cache add bower
+verbose cache add [ 'bower', null ]
+silly cache add: name, spec, args [ undefined, 'bower', [ 'bower', null ] ]
+verbose parsed url { pathname: 'bower', path: 'bower', href: 'bower' }
+info addNamed [ 'bower', '' ]
+verbose addNamed [ null, '' ]
+verbose GET bower
+verbose raw, before any munging bower
+verbose url resolving [ 'https://registry.npmjs.org/', './bower' ]
+verbose url resolved https://registry.npmjs.org/bower
+silly get cb [ 200,
+silly get cb   { vary: 'Accept',
+silly get cb     server: 'CouchDB/1.2.1 (Erlang OTP/R15B)',
+silly get cb     etag: '"4ZU4J3HDEXUZRY8XT6M158T1B"',
+silly get cb     date: 'Sun, 03 Feb 2013 01:12:01 GMT',
+silly get cb     'content-type': 'application/json',
+silly get cb     'content-length': '248713' } ]
+verbose mkdir (expected) error ENOENT, No such file or directory '/Users/Simon/.npm/bower'
+verbose mkdir done: /Users/Simon/.npm/bower 755
+ERR! Error: No compatible version found: bower
+ERR! No valid targets found.
+ERR! Perhaps not compatible with your version of node?
+ERR!     at installTargetsError (/usr/local/lib/node_modules/npm/lib/cache.js:424:10)
+ERR!     at /usr/local/lib/node_modules/npm/lib/cache.js:406:17
+ERR!     at saved (/usr/local/lib/node_modules/npm/lib/utils/npm-registry-client/get.js:136:7)
+ERR!     at Object.cb [as oncomplete] (/usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:36:9)
+ERR! Report this *entire* log at:
+ERR!     <http://github.com/isaacs/npm/issues>
+ERR! or email it to:
+ERR!     <npm-@googlegroups.com>
+ERR! 
+ERR! System Darwin 11.4.2
+ERR! command "node" "/usr/local/bin/npm" "install" "bower" "-g"
+ERR! cwd /Users/Simon/Dropbox/Coding/Awesomesauce
+ERR! node -v v0.5.11-pre
+ERR! npm -v 1.0.106
+verbose exit [ 1, true ]

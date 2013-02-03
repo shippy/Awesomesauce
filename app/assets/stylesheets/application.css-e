@@ -9,11 +9,14 @@
 body {
 	background-color: orange;
 	text-align: center;
-	background-image: url('../images/bgr.tiff');
-	font-style: Palatino;
+	background-image: url('bgr.tiff');
+	font-style: Palatino, Times, serif;
 }
-body,p,td,th,li {font: 0.95em/1.7em Palatino, Times, serif;}
-h1 {line-height: 1.5em}
+
+
+body,p,td,th,li {font: 1em/1.7em Palatino, Times, serif;}
+h1 {line-height: 1.5em; text-align: center}
+p {text-align: justify}
 
 #main {
 	width: 700px;
@@ -32,8 +35,12 @@ h1 {line-height: 1.5em}
 }
 
 #user_nav {
-	width: 200px;
-	position: top left;
+	padding: 5px;
+	right: 0;
+	margin: 1px;
+	text-align: center;
+	text-size: 0.9em;
+	border: 1px solid black;
 }
 
 h1 {border-bottom: 1px solid black}
