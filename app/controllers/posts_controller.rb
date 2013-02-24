@@ -28,7 +28,6 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @post.user = current_user
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @post }
@@ -44,10 +43,11 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
-    @post.user = current_user
+    @post.user = current_user.id
 
     respond_to do |format|
       if @post.save
+        daily_reminder.query(@user).deliver
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else

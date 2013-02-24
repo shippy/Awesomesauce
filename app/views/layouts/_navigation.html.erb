@@ -1,5 +1,6 @@
-<ul class="nav">
-  <li class="brand"><%= link_to "Awesomesauce", root_path %></li>
+
+<h4><%= link_to "Awesomesauce", root_path, :class => "brand" %></h3>
+<ul class="nav nav-pills pull-right">
   <% if user_signed_in? %>
     <li>
     <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
