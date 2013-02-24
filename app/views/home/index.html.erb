@@ -7,7 +7,7 @@
 </div>
   <div class="samples">
     <h3>What others are grateful for</h3>
-    <% @thoughts[0,3].each do |post| %>
+    <% @thoughts.last(3).each do |post| %>
     <p class="quote">"<%= post.body %>"</p>
     <% end %>
   </div>
