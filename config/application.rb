@@ -59,5 +59,7 @@ module Myapp
     config.assets.version = '1.0'
     config.secret_token = '6472d9ae19eed7f554c595511b64bc4c75baeeb04d7624e3b6eadc55d3a12b91a8f9a241078cb6ae441c82b25c9899b4058bc39dd225acfce1259449e76f1768'
     
+    # Heroku hack
+    config.assets.initialize_on_precompile = false
   end
 end
