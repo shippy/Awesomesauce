@@ -1,20 +1,21 @@
-<p id="notice"><%= notice %></p>
+<%= form_for(@thought) do |f| %>
+  <% if @thought.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@thought.errors.count, "error") %> prohibited this thought from being saved:</h2>
 
-<p>
-  <b>Body:</b>
-  <%= @thought.body %>
-</p>
+      <ul>
+      <% @thought.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<p>
-  <b>User:</b>
-  <%= @thought.user %>
-</p>
-
-<p>
-  <b>Date:</b>
-  <%= @thought.date %>
-</p>
-
-
-<%= link_to 'Edit', edit_thought_path(@thought) %> |
-<%= link_to 'Back', thoughts_path %>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_field :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
