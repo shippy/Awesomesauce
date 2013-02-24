@@ -3,7 +3,6 @@
 <% @posts.each do |post| %>
   <div class="post">
     <q>"<%= post.body %>"</q>
-    <p>By <%= post.user %></p>
     <p>Manipulate:  <%= link_to 'Show', post %>, <%= link_to 'Edit', edit_post_path(post) %>, <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %>.</p>
   </div>
 <% end %>
