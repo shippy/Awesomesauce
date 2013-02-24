@@ -13,6 +13,10 @@ class ThoughtsController < ApplicationController
     end
   end
 
+  def send_summary
+    weekly_summary.summary(user).deliver
+  end
+
   # GET /thoughts/1
   # GET /thoughts/1.json
   def show
