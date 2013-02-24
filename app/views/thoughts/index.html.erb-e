@@ -2,7 +2,7 @@
 <p><%= link_to 'New Thought', new_thought_path %></p>
 <div>
 <% @thoughts.each do |thought| %>
-    <p><em><%= thought.date %></em></p>
+    <p class="date"><%= thought.date %></p>
     <p><%= thought.body %></p>
     <p>Manipulate: <%= link_to 'Show', thought %> | <%= link_to 'Edit', edit_thought_path(thought) %> | <%= link_to 'Destroy', thought, confirm: 'Are you sure?', method: :delete %></p>
 <% end %>
