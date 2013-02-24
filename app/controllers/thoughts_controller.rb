@@ -14,12 +14,12 @@ class ThoughtsController < ApplicationController
   end
 
   def send_summary
-    WeeklySummary.summary(user).deliver
+    WeeklySummary.summary(current_user).deliver
     # redirect_to (@thoughts, :notice => "Summary sent!")
   end
   
   def send_reminder
-    DailyReminder.query(user).deliver
+    DailyReminder.query(current_user).deliver
   end
 
   # GET /thoughts/1
