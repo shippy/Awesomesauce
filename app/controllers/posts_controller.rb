@@ -47,7 +47,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        daily_reminder.query(@user).deliver
+        # daily_reminder.query(@user).deliver
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
