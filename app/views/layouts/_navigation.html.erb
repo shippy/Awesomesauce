@@ -19,14 +19,15 @@
     <%= link_to 'Sign up', new_user_registration_path %>
     </li>
   <% end %>
-  
+  </ul>
+  <ul class="nav nav-pills pull-left">
   <% if user_signed_in? %>
     <li>
-    <%= link_to 'Create post', new_post_path %>
+    <%= link_to 'Create post', new_thought_path %>
     </li>
 
       <li>
-      <%= link_to 'View posts', posts_path %>
+      <%= link_to 'View posts', thoughts_path %>
       </li>
   <% end %>
 </ul>
