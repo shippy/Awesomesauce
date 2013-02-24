@@ -8,7 +8,7 @@ Myapp::Application.routes.draw do
   resources :posts
   
   root :to => "home#index"
-  match 'send_summary' => 'thoughts#send_symmary'
+  match 'send_summary' => 'thoughts#send_summary'
   match 'incoming_mails' => 'incoming_mails#create', :via => [:post, :get], :as => "incoming_mails"
   # The priority is based upon order of creation:
   # first created -> highest priority.
