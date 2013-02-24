@@ -15,6 +15,7 @@ class ThoughtsController < ApplicationController
 
   def send_summary
     weekly_summary.summary(user).deliver
+    redirect_to (@thoughts, :notice => "Summary sent!")
   end
 
   # GET /thoughts/1
