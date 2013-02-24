@@ -1,27 +1,11 @@
-<h1>Listing thoughts</h1>
-
-<table>
-  <tr>
-    <th>Body</th>
-    <th>User</th>
-    <th>Date</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<h1>Listing thoughts (<%= current_user.email %>)</h1>
+<p><%= link_to 'New Thought', new_thought_path %></p>
+<div>
 <% @thoughts.each do |thought| %>
-  <tr>
-    <td><%= thought.body %></td>
-    <td><%= thought.user.email %></td>
-    <td><%= thought.date %></td>
-    <td><%= link_to 'Show', thought %></td>
-    <td><%= link_to 'Edit', edit_thought_path(thought) %></td>
-    <td><%= link_to 'Destroy', thought, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+    <p><em><%= thought.date %></em></p>
+    <p><%= thought.body %></p>
+    <p>Manipulate: <%= link_to 'Show', thought %> | <%= link_to 'Edit', edit_thought_path(thought) %> | <%= link_to 'Destroy', thought, confirm: 'Are you sure?', method: :delete %></p>
 <% end %>
-</table>
+</div>
 
-<br />
 
-<%= link_to 'New Thought', new_thought_path %>
