@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+  <h2>Hi, you!</h2>
+  <p>Maybe it's been another rough week and it's time that you felt better. Here's the last five things that you really liked:</p>
+  <ul>
+  <% @thoughts.each do |t| %>
+    <li><%= t.body %></li>
+  <% end %>
+  </ul>
+  <p>You've been great, and you're gonna carry on being great! Here, have these lovely fawns.</p>
+  <p><img url="https://i.chzbgr.com/maxW500/6901155584/h77000211/" /></p>
+</body>
+</html>
