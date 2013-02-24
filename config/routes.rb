@@ -8,6 +8,8 @@ Myapp::Application.routes.draw do
   resources :posts
   
   root :to => "home#index"
+  
+  match "smtp2web_6bbc3a7b2d8aa875.html" => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
