@@ -1,10 +1,11 @@
 class ThoughtsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index]
+  before_filter :authenticate_user!
   
   # GET /thoughts
   # GET /thoughts.json
   def index
-    @thoughts = Thought.all
+    # @thoughts = Thought.all
+    @thoughts = Thought.where(:user_id => current_user.id).all
 
     respond_to do |format|
       format.html # index.html.erb
