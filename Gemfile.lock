@@ -108,6 +108,7 @@ GEM
     multi_json (1.6.1)
     nokogiri (1.5.6)
     orm_adapter (0.4.0)
+    pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -148,6 +149,8 @@ GEM
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
     rubyzip (0.9.9)
+    rufus-scheduler (2.0.17)
+      tzinfo (>= 0.3.23)
     sass (3.2.6)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -206,9 +209,11 @@ DEPENDENCIES
   less-rails (>= 2.2.6)
   libv8 (>= 3.11.8)
   mailman
+  pg
   rails (= 3.2.3)
   rolify (>= 3.2.0)
   rspec-rails (>= 2.12.2)
+  rufus-scheduler
   sass-rails (~> 3.2.3)
   simple_form (>= 2.0.4)
   sqlite3

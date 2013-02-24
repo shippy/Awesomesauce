@@ -22,6 +22,7 @@ end
 gem 'jquery-rails'
 
 gem 'mailman'
+gem 'rufus-scheduler'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -38,8 +39,13 @@ gem 'mailman'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-# gem "mysql2", ">= 0.3.11"
-gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
+
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
 gem "capybara", ">= 2.0.2", :group => :test
 gem "database_cleaner", ">= 0.9.1", :group => :test
