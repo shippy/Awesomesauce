@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Awesomesauce::Application.config.secret_token = '7dfb1ad8c686056b3285784c6687f8aee3ab1c5f3d8596153ac482a09d8315ebafd6e6a0a1d4a7a8e0fc4f9000c4f6bf5b979031fdddbb720bbbecf616887c36'
+Myapp::Application.config.secret_token = '6472d9ae19eed7f554c595511b64bc4c75baeeb04d7624e3b6eadc55d3a12b91a8f9a241078cb6ae441c82b25c9899b4058bc39dd225acfce1259449e76f1768'

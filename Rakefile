@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Awesomesauce::Application.load_tasks
+Myapp::Application.load_tasks
