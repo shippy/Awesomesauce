@@ -3,4 +3,5 @@ class DailyReminder < ActionMailer::Base
   
   def query(user)
     mail(:to => user.email, :subject => "What are you grateful for today?")
+  end
 end
