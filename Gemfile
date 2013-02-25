@@ -40,12 +40,8 @@ gem 'rufus-scheduler'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-group :development, :test do
-  # gem 'sqlite3'
-end
-group :production do
-  gem 'pg'
-end
+gem 'sqlite3', :group => [:development, :test]
+gem 'pg', :group => [:production]
 
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
 gem "capybara", ">= 2.0.2", :group => :test
