@@ -77,7 +77,7 @@ Myapp::Application.configure do
     # domain => "awesomesauce1.herokuapp.com",
     :authentication => "plain",
     :enable_starttls_auto => true,
-    :openssl_verify_mode => 'none'
+    :openssl_verify_mode => 'none',
     :user_name => ENV["GMAIL_USERNAME"],
     :password => ENV["GMAIL_PASSWORD"]
   }
