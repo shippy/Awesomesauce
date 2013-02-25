@@ -16,11 +16,12 @@ class ThoughtsController < ApplicationController
   def send_summary
     WeeklySummary.summary(current_user).deliver
     # render :text => 'Summary sent', :status => 200
-    redirect_to :controller => 'home', :action => 'index', :status => 200, :notice => "Summary sent!"
+    redirect_to :controller => 'home', :action => 'index', :notice => "Summary sent!"
   end
      
   def send_reminder
     DailyReminder.query(current_user).deliver
+    redirect_to :controller => 'home', :action => 'index', :notice => "Reminder sent!"
   end
 
   # GET /thoughts/1
