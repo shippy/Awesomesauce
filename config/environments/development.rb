@@ -40,16 +40,23 @@ Myapp::Application.configure do
   config.action_mailer.delivery_method = :smtp
   # change to true to allow email to be sent during development
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"  
   
-  ActionMailer::Base.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :domain               => "gmail.com",
-    :user_name            => ENV["GMAIL_USERNAME"],
-    :password             => ENV["GMAIL_PASSWORD"],
-    :authentication       => "plain",
-    :enable_starttls_auto => true
+  GMAIL_CONFIG = YAML.load_file("#{::Rails.root}/config/gmail.yml")[::Rails.env]
+  
+  config.action_mailer.smtp_settings = {
+    address:    "smtp.gmail.com",
+    port:       587,
+    domain:     "awesomesauce1.herokuapp.com",
+    # user_name:  ENV["GMAIL_USERNAME"],
+    # password:   ENV["GMAIL_PASSWORD"],
+    # user_name: "aweoftoday@gmail.com",
+    # password: "13aweoftoday",
+    user_name:  GMAIL_CONFIG["username"],
+    password:   GMAIL_CONFIG["pwd"],
+    authentication: "plain",
+    enable_starttls_auto: true,
+    openssl_verify_mode: 'none'
   }
 end

@@ -66,7 +66,7 @@ Myapp::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   
   
-  config.action_mailer.default_url_options = { :host => 'myapp.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'awesomesauce1.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
@@ -77,6 +77,7 @@ Myapp::Application.configure do
     domain: "awesomesauce1.herokuapp.com",
     authentication: "plain",
     enable_starttls_auto: true,
+    openssl_verify_mode: 'none'
     user_name: ENV["GMAIL_USERNAME"],
     password: ENV["GMAIL_PASSWORD"]
   }

@@ -17,3 +17,5 @@
 
 # Ignore pwd file
 /.env
+/config/initializers/dev_pwd.rb
+/config/gmail.yml
