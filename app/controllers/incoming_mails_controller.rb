@@ -8,7 +8,11 @@ class IncomingMailsController < ApplicationController
 
     # Do some other stuff with the mail message
     if User.all.map(&:email).include? params[:envelope][:from] # thanks, Adam Bray!
-      @thought = Thought.new(params[:plain])
+      puts "User is correct!"
+      puts "Recording the following as ATD:"
+      puts params[:plain].split("\n").first
+      @thought = Thought.new
+      @thought.body = params[:plain].split("\n").first
       @thought.user = User.where(:email => params[:envelope][:from])
       @thought.date = DateTime.now
       
