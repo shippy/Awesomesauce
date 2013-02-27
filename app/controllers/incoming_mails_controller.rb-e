@@ -4,9 +4,9 @@ class IncomingMailsController < ApplicationController
   
   def create
     puts "Entering the controller! Controlling the e-mail!"
-    Rails.logger.info params[:headers][:subject]
-    Rails.logger.info params[:plain]
-    Rails.logger.info params[:html]
+    # Rails.logger.info params[:headers][:subject]
+    # Rails.logger.info params[:plain]
+    # Rails.logger.info params[:html]
 
     # Do some other stuff with the mail message
     if User.all.map(&:email).include? params[:envelope][:from] # thanks, Adam Bray!
