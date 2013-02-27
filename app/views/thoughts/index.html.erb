@@ -1,11 +1,17 @@
-<div class="content">
 <h1>Listing thoughts (<%= current_user.email %>)</h1>
 <p><%= link_to 'New Thought', new_thought_path %></p>
-<div>
-<% @thoughts.each do |thought| %>
+<% i = 1
+   @thoughts.each do |thought|
+     if i % 3 == 0 %>
+        <div class="row">
+     <% end %>
+  <div class="thought span4">
     <p class="date"><%= thought.date %></p>
     <p><%= thought.body %></p>
     <p>Manipulate: <%= link_to 'Show', thought %> | <%= link_to 'Edit', edit_thought_path(thought) %> | <%= link_to 'Destroy', thought, confirm: 'Are you sure?', method: :delete %></p>
+  </div>
+  <% if i % 3 == 2 %>
+  </div>
+  <% end %>
+  <% i += 1 %>
 <% end %>
-</div>
-</div>
