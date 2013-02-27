@@ -1,17 +1,15 @@
+<p class="new-thought"><%= link_to 'New Thought', new_thought_path, class: "btn btn-create" %></p>
 <h1>Listing thoughts (<%= current_user.email %>)</h1>
-<p><%= link_to 'New Thought', new_thought_path %></p>
-<% i = 1
-   @thoughts.each do |thought|
-     if i % 3 == 0 %>
-        <div class="row">
-     <% end %>
+<div class="row">
+<% i = 0
+   @thoughts.each do |thought| %>
   <div class="thought span4">
-    <p class="date"><%= thought.date %></p>
-    <p><%= thought.body %></p>
-    <p>Manipulate: <%= link_to 'Show', thought %> | <%= link_to 'Edit', edit_thought_path(thought) %> | <%= link_to 'Destroy', thought, confirm: 'Are you sure?', method: :delete %></p>
+    <p class="date"><%= thought.date.strftime("%d %b %Y, %H:%M") %> (<%= link_to 'Edit', edit_thought_path(thought) %> | <%= link_to 'Destroy', thought, confirm: 'Are you sure?', method: :delete %>)</p>
+    <p class="atd"><%= thought.body %></p>
   </div>
   <% if i % 3 == 2 %>
-  </div>
+  </div><div class="row"> <!-- end row -->
   <% end %>
   <% i += 1 %>
 <% end %>
+</div>
