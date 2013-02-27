@@ -1,0 +1,29 @@
+<h1>Listing cutes</h1>
+
+<table>
+  <tr>
+    <th>Url</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Number</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cutes.each do |cute| %>
+  <tr>
+    <td><%= cute.url %></td>
+    <td><%= cute.type %></td>
+    <td><%= cute.description %></td>
+    <td><%= cute.number %></td>
+    <td><%= link_to 'Show', cute %></td>
+    <td><%= link_to 'Edit', edit_cute_path(cute) %></td>
+    <td><%= link_to 'Destroy', cute, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cute', new_cute_path %>

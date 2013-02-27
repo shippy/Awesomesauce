@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Url:</b>
+  <%= @cute.url %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @cute.type %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @cute.description %>
+</p>
+
+<p>
+  <b>Number:</b>
+  <%= @cute.number %>
+</p>
+
+
+<%= link_to 'Edit', edit_cute_path(@cute) %> |
+<%= link_to 'Back', cutes_path %>

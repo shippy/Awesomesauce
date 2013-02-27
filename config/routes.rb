@@ -1,4 +1,5 @@
 Myapp::Application.routes.draw do
+  resources :cutes
   resources :thoughts
 
   devise_for :users

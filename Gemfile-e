@@ -25,6 +25,7 @@ gem 'jquery-rails'
 # gem 'mandrill-api'
 # gem 'rufus-scheduler'
 
+gem 'randumb'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
