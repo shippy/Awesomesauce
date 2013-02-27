@@ -4,6 +4,7 @@ class IncomingMailsController < ApplicationController
   
   def create
     puts "Entering the controller! Controlling the e-mail!"
+    debug(params)
     # Rails.logger.info params[:headers][:subject]
     # Rails.logger.info params[:plain]
     # Rails.logger.info params[:html]
@@ -14,7 +15,7 @@ class IncomingMailsController < ApplicationController
       puts "Recording the following as ATD:"
       puts params[:plain].split("\n").first
       @thought = Thought.new
-      @thought.body = params[:plain].split("\n").first
+      @thought.body = params[:reply_plain] # params[:plain].split("\n").first
       @thought.user = User.where(:email => params[:envelope][:from])
       @thought.date = DateTime.now
       
