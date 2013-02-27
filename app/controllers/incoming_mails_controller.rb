@@ -2,6 +2,7 @@ class IncomingMailsController < ApplicationController
   skip_before_filter :verify_authenticity_token
   
   def create
+    puts "Entering the controller! Controlling the e-mail!"
     Rails.logger.info params[:headers][:subject]
     Rails.logger.info params[:plain]
     Rails.logger.info params[:html]
