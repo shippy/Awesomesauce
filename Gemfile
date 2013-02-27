@@ -21,9 +21,9 @@ end
 
 gem 'jquery-rails'
 
-gem 'mailman'
-gem 'mandrill-api'
-gem 'rufus-scheduler'
+# gem 'mailman'
+# gem 'mandrill-api'
+# gem 'rufus-scheduler'
 
 
 # To use ActiveModel has_secure_password
