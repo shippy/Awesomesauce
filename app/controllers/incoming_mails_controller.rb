@@ -1,5 +1,6 @@
 class IncomingMailsController < ApplicationController
   skip_before_filter :verify_authenticity_token
+  puts "In class"
   
   def create
     puts "Entering the controller! Controlling the e-mail!"
