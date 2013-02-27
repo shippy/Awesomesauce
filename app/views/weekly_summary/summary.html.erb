@@ -11,7 +11,8 @@
     <li><%= t.body %></li>
   <% end %>
   </ul>
-  <p>You've been great, and you're gonna carry on being great! Here, have these lovely fawns.</p>
-  <p><img url="https://i.chzbgr.com/maxW500/6901155584/h77000211/" /></p>
+  <p>You've been great, and you're gonna carry on being great!</p>
+  <p>And because you're such a mensch, here have this <%= link_to(@cute.media_type + " of " + @cute.description, @cute.url) %>!</p>
+  <% if @cute.media_type == "image" %><p><img src="{@cute.url}"></p><% end %>
 </body>
 </html>

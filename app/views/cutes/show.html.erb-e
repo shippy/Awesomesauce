@@ -7,7 +7,7 @@
 
 <p>
   <b>Type:</b>
-  <%= @cute.type %>
+  <%= @cute.media_type %>
 </p>
 
 <p>
