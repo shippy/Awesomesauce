@@ -4,8 +4,6 @@ Myapp::Application.routes.draw do
   devise_for :users
 
   get "home/index"
-
-  resources :posts
   
   root :to => "home#index"
   match 'send_summary' => 'thoughts#send_summary'

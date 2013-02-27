@@ -1,9 +1,0 @@
-<h1>Posts</h1>
-<p class="newpost"><%= link_to 'Create New', new_thought_path %></p>
-<% @thoughts.each do |thought| %>
-  <div class="post">
-    <q>"<%= thought.body %>"</q>
-    <p>Manipulate:  <%= link_to 'Show', thought %>, <%= link_to 'Edit', edit_thought_path(thought) %>, <%= link_to 'Destroy', thought, confirm: 'Are you sure?', method: :delete %>.</p>
-  </div>
-<% end %>
-

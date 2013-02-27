@@ -1,9 +1,0 @@
-<h1>Posts</h1>
-<p class="newpost"><%= link_to 'Create New Post', new_post_path %></p>
-<% @posts.each do |post| %>
-  <div class="post">
-    <q>"<%= post.body %>"</q>
-    <p>Manipulate:  <%= link_to 'Show', post %>, <%= link_to 'Edit', edit_post_path(post) %>, <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %>.</p>
-  </div>
-<% end %>
-
