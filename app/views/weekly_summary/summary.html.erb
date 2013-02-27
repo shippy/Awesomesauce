@@ -13,6 +13,6 @@
   </ul>
   <p>You've been great, and you're gonna carry on being great!</p>
   <p>And because you're such a mensch, here have this <%= link_to(@cute.media_type + " of " + @cute.description, @cute.url) %>!</p>
-  <% if @cute.media_type == "image" %><p><img src="{@cute.url}"></p><% end %>
+  <% if @cute.media_type == "image" %><p><img src="<%= @cute.url %>"></p><% end %>
 </body>
 </html>
