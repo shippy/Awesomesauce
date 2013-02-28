@@ -4,8 +4,9 @@ class IncomingMailsController < ApplicationController
   def create
     # # Log things
     # Rails.logger.info params[:headers][:subject]
-    # Rails.logger.info params[:plain]
-    # Rails.logger.info params[:html]
+    Rails.logger.info params[:plain]
+    Rails.logger.info params[:reply_plain]
+    Rails.logger.info params[:html]
     
     # Is the user registered?
     if User.all.map(&:email).include? params[:from] # thanks, Adam Bray!
