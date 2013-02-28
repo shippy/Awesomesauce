@@ -4,16 +4,15 @@ class IncomingMailsController < ApplicationController
   
   def create
     puts "Entering the controller! Controlling the e-mail!"
-    debug(params)
     # Rails.logger.info params[:headers][:subject]
     # Rails.logger.info params[:plain]
     # Rails.logger.info params[:html]
 
     # Do some other stuff with the mail message
-    if User.all.map(&:email).include? params[:envelope][:from] # thanks, Adam Bray!
+    if User.all.map(&:email).include? params[:from] # thanks, Adam Bray!
       puts "User is correct!"
       puts "Recording the following as ATD:"
-      puts params[:plain].split("\n").first
+      puts params[:reply_plain]
       @thought = Thought.new
       @thought.body = params[:reply_plain] # params[:plain].split("\n").first
       @thought.user = User.where(:email => params[:envelope][:from])
