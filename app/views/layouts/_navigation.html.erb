@@ -1,32 +1,32 @@
 <%= link_to "Awesomesauce", root_path, :class => "brand" %>
 <ul class="nav nav-pills pull-right">
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
-    </li>
-  <% else %>
-    <li>
-    <%= link_to 'Login', new_user_session_path %>
-    </li>
-  <% end %>
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Edit account', edit_user_registration_path %>
-    </li>
-  <% else %>
-    <li>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    </li>
-  <% end %>
-  </ul>
-  <ul class="nav nav-pills pull-left">
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Create post', new_thought_path %>
-    </li>
-
-      <li>
-      <%= link_to 'View my posts', thoughts_path %>
-      </li>
-  <% end %>
+<% if user_signed_in? %>
+<li>
+  <%= link_to 'Edit account', edit_user_registration_path %>
+</li>
+<% else %>
+<li>
+  <%= link_to 'Sign up', new_user_registration_path %>
+</li>
+<% end %>
+<% if user_signed_in? %>
+<li>
+  <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
+</li>
+<% else %>
+<li>
+  <%= link_to 'Login', new_user_session_path %>
+</li>
+<% end %>
 </ul>
+
+<% if user_signed_in? %>
+<ul class="nav nav-pills pull-left">
+  <li>
+    <%= link_to 'View my posts', thoughts_path %>
+  </li>
+  <li>
+    <%= link_to 'Create post', new_thought_path %>
+  </li>
+</ul>
+<% end %>
