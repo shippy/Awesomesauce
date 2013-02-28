@@ -15,7 +15,7 @@ class IncomingMailsController < ApplicationController
       puts params[:reply_plain]
       @thought = Thought.new
       @thought.body = params[:reply_plain] # params[:plain].split("\n").first
-      @thought.user = User.where(:email => params[:envelope][:from])
+      @thought.user = User.where(:email => params[:from])
       @thought.date = DateTime.now
       
       if @thought.save
