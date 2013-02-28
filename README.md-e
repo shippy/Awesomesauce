@@ -2,6 +2,7 @@
 
 ## What it does
 Awesomesauce is a simple application that does four things:
+
 1. has people register with their e-mail addresses,
 2. sends them an e-mail every day to ask them what they're grateful for,
 3. stores their reply in a database, and
