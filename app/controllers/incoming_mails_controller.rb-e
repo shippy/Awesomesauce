@@ -1,20 +1,19 @@
 class IncomingMailsController < ApplicationController
   skip_before_filter :verify_authenticity_token
-  puts "In class"
   
   def create
-    puts "Entering the controller! Controlling the e-mail!"
-    # Rails.logger.info params[:headers][:subject]
-    # Rails.logger.info params[:plain]
-    # Rails.logger.info params[:html]
-
-    # Do some other stuff with the mail message
+    # Log things
+    Rails.logger.info params[:headers][:subject]
+    Rails.logger.info params[:plain]
+    Rails.logger.info params[:html]
+    
+    # Is the user registered?
     if User.all.map(&:email).include? params[:from] # thanks, Adam Bray!
       puts "User is correct!"
       puts "Recording the following as ATD:"
-      puts params[:reply_plain]
+      puts params[:reply_plain].gsub("\n", " ").strip
       @thought = Thought.new
-      @thought.body = params[:reply_plain] # params[:plain].split("\n").first
+      @thought.body = params[:reply_plain].gsub("\n", " ").strip
       @thought.user = User.where(:email => params[:from]).first
       @thought.date = DateTime.now
       
