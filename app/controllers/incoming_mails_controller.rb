@@ -2,10 +2,10 @@ class IncomingMailsController < ApplicationController
   skip_before_filter :verify_authenticity_token
   
   def create
-    # Log things
-    Rails.logger.info params[:headers][:subject]
-    Rails.logger.info params[:plain]
-    Rails.logger.info params[:html]
+    # # Log things
+    # Rails.logger.info params[:headers][:subject]
+    # Rails.logger.info params[:plain]
+    # Rails.logger.info params[:html]
     
     # Is the user registered?
     if User.all.map(&:email).include? params[:from] # thanks, Adam Bray!
