@@ -9,8 +9,7 @@ class IncomingMailsController < ApplicationController
     
     # Is the user registered?
     if User.all.map(&:email).include? params[:from] # thanks, Adam Bray!
-      puts "User is correct!"
-      puts "Recording the following as ATD:"
+      puts "Recording the following as ATD for user" + params[:from]
       puts params[:reply_plain].gsub("\n", " ").strip
       @thought = Thought.new
       @thought.body = params[:reply_plain].gsub("\n", " ").strip
