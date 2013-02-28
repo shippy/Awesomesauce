@@ -5,7 +5,11 @@ class ThoughtsController < ApplicationController
   # GET /thoughts.json
   def index
     # @thoughts = Thought.all
-    @thoughts = Thought.where(:user_id => current_user.id).all
+    if Ability.new(current_user).can? :manage, :all
+      @thoughts = Thought.all
+    else
+      @thoughts = Thought.where(:user_id => current_user.id).all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -51,6 +55,9 @@ class ThoughtsController < ApplicationController
   # GET /thoughts/1/edit
   def edit
     @thought = Thought.find(params[:id])
+    if @thought.user != current_user
+      redirect_to :root_path
+    end
   end
 
   # POST /thoughts
