@@ -10,24 +10,32 @@
       </ul>
     </div>
   <% end %>
+  <div class="row">
+    <div class="span4">
+  <dl>
+    <dd><%= f.label :url %></dd>
+    <dt><%= f.text_field :url %></dt>
+    
+    <dd><%= f.label :media_type %> (Is this an 'image'? A 'video'?)</dd>
+    <dt><%= f.text_field :media_type %></dt>
+    
+    <dd><%= f.label :number %> (How many cute things are there?)</dd>
+    <dt><%= f.number_field :number %></dt>
+  </dl>
+  </div>
+  <div class="span4">
+  <dl>
+    <dd><%= f.label :description %> (as in, "an image of ____")</dd>
+    <dt><%= f.text_area :description, :size => "10x5" %></dt>
 
-  <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :media_type %> (Is this an 'image'? A 'video'?)<br />
-    <%= f.text_field :media_type %>
-  </div>
-  <div class="field">
-    <%= f.label :description %> (as in, "an image of ____")<br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :number %> (How many cute things are there?)<br />
-    <%= f.number_field :number %>
-  </div>
   <div class="actions">
     <%= f.submit %>
+  </div>
+  </dl>
+  </div>
+  <div class="span4">
+    <p>Please make sure that the submitted thing is really cute! Also, there is no screening
+      mechanism at this point, so please don't misuse it.</p>
+  </div>
   </div>
 <% end %>
