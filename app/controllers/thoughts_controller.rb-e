@@ -1,5 +1,8 @@
 class ThoughtsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :restrict_to_development, :only => [:send_summary, :send_reminder]
+  # via http://stackoverflow.com/questions/1207424/can-i-restrict-rails-controller-methods-to-development-environment
+  
   
   # GET /thoughts
   # GET /thoughts.json
@@ -15,17 +18,6 @@ class ThoughtsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @thoughts }
     end
-  end
-
-  def send_summary
-    WeeklySummary.summary(current_user).deliver
-    # render :text => 'Summary sent', :status => 200
-    redirect_to :controller => 'home', :action => 'index', :notice => "Summary sent!"
-  end
-     
-  def send_reminder
-    DailyReminder.query(current_user).deliver
-    redirect_to :controller => 'home', :action => 'index', :notice => "Reminder sent!"
   end
 
   # GET /thoughts/1
@@ -105,4 +97,23 @@ class ThoughtsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
+  
+  # Experimental mailer methods - for development environment
+  def send_summary
+    WeeklySummary.summary(current_user).deliver
+    # render :text => 'Summary sent', :status => 200
+    redirect_to :controller => 'home', :action => 'index', :notice => "Summary sent!"
+  end
+  def send_reminder
+    DailyReminder.query(current_user).deliver
+    redirect_to :controller => 'home', :action => 'index', :notice => "Reminder sent!"
+  end
+  
+  protected
+      # this method should be placed in ApplicationController
+      def restrict_to_development
+        head(:bad_request) unless Rails.env.development?
+      end
 end
