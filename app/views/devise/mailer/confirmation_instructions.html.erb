@@ -1,5 +1,9 @@
-<p>Welcome <%= @email %>!</p>
+<p>Welcome to Awesomesauce, <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>Once you confirm your e-mail, you will start receiving daily e-mails that will ask you what you're grateful for. All you need to do is respond to them, with a sentence or two, about some good thing in your life: maybe something awesome that's happened, or maybe just something ordinary you just want to appreciate. Your choice!</p>
+
+<p>Then, every Monday morning, Awesomesauce will send you a summary of things that made you happy in the past week, and a cute animal on top of that!</p>
+
+<p>So, now that you know what you're in for, you can confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
