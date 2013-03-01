@@ -148,6 +148,9 @@ GEM
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
     rubyzip (0.9.9)
+    sanitize (2.0.3)
+      nokogiri (>= 1.4.4, < 1.6)
+      nokogiri (>= 1.4.4, < 1.6)
     sass (3.2.6)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -212,6 +215,7 @@ DEPENDENCIES
   randumb
   rolify (>= 3.2.0)
   rspec-rails (>= 2.12.2)
+  sanitize
   sass-rails (~> 3.2.3)
   simple_form (>= 2.0.4)
   sqlite3
