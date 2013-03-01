@@ -11,9 +11,9 @@ class IncomingMailsController < ApplicationController
     # Is the user registered?
     if User.all.map(&:email).include? params[:from] # thanks, Adam Bray!
       puts "Recording the following as ATD for user" + params[:from]
-      puts params[:reply_plain].gsub("\n", " ").strip
+      puts Sanitize.clean(params[:reply_plain].gsub("\n", " ").strip)
       @thought = Thought.new
-      @thought.body = params[:reply_plain].gsub("\n", " ").strip
+      @thought.body = Sanitize.clean(params[:reply_plain].gsub("\n", " ").strip)
       @thought.user = User.where(:email => params[:from]).first
       @thought.date = DateTime.now
       
