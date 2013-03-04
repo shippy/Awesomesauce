@@ -48,7 +48,7 @@ class ThoughtsController < ApplicationController
   def edit
     @thought = Thought.find(params[:id])
     if @thought.user != current_user
-      redirect_to :root_path
+      redirect_to thoughts_url
     end
   end
 
