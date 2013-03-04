@@ -57,6 +57,9 @@ gem "bootswatch-rails", "~> 0.4.0" # Bootstrap skins
 gem "twitter-bootstrap-rails", ">= 2.2.4", :group => :assets
 gem "libv8", ">= 3.11.8"
 gem "therubyracer", ">= 0.11.3", :group => :assets, :platform => :ruby, :require => "v8"
+gem 'rack-google-analytics', :group => :production, :require => "rack/google-analytics"
+
+
 gem "devise", ">= 2.2.3"
 gem "devise_invitable", ">= 1.1.5"
 gem "cancan", ">= 1.6.8"
