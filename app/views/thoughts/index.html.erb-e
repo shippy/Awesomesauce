@@ -3,9 +3,11 @@
 <div class="row">
 <% i = 0
    @thoughts.each do |thought| %>
-  <div class="thought span4">
+  <div class="span4">
+    <div class="thought">
     <p class="date"><%= thought.date.strftime("%d %b %Y, %H:%M") %> (<%= link_to 'Edit', edit_thought_path(thought) %> | <%= link_to 'Destroy', thought, confirm: 'Are you sure?', method: :delete %>)</p>
     <p class="atd"><%= thought.body %></p>
+    </div>
   </div>
   <% if i % 3 == 2 %>
   </div><div class="row"> <!-- end row -->
