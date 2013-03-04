@@ -5,7 +5,7 @@
 </head>
 <body>
   <h2>Hi, you!</h2>
-  <p>Maybe it's been another rough week and it's time that you felt better. Here's the last five things that you really liked:</p>
+  <p>Maybe it's been another rough week and it's time that you felt better. Here's the things from last week that you really liked:</p>
   <ul>
   <% @thoughts.each do |t| %>
     <li><%= t.body %></li>
@@ -14,5 +14,6 @@
   <p>You've been great, and you're gonna carry on being great!</p>
   <p>And because you're such a mensch, here have this <%= link_to(@cute.media_type + " of " + @cute.description, @cute.url) %>!</p>
   <% if @cute.media_type == "image" %><p><img src="<%= @cute.url %>"></p><% end %>
+  <p>&mdash; <%= link_to "Awesomesauce", root_url %></p>
 </body>
 </html>
