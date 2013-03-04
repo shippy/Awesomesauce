@@ -58,6 +58,7 @@ class ThoughtsController < ApplicationController
     @thought = Thought.new(params[:thought])
     @thought.user = current_user
     @thought.date = DateTime.now
+    @thought.body = Sanitize.clean(@thought.body)
 
     respond_to do |format|
       if @thought.save
@@ -74,6 +75,7 @@ class ThoughtsController < ApplicationController
   # PUT /thoughts/1.json
   def update
     @thought = Thought.find(params[:id])
+    @thought.body = Sanitize.clean(@thought.body)
 
     respond_to do |format|
       if @thought.update_attributes(params[:thought])
