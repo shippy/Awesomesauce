@@ -10,10 +10,23 @@ class IncomingMailsController < ApplicationController
     
     # Is the user registered?
     if User.all.map(&:email).include? params[:from] # thanks, Adam Bray!
+      
+      # Manipulation of the reply
+      reply = params[:reply_plain].gsub("<3", "&lt;3") # special replacement for "<3"
+      reply = reply.split("\r\n").split("\n") # splitting by newlines
+      if reply[reply.length-1].include? "aweoftoday@gmail.com" # split the top reply line
+        reply = reply[0...reply.length-2]
+      end
+      # Anti-XSS
+      reply = Sanitize.clean(reply.join(" ")).strip
+      
+      # Log
       puts "Recording the following as ATD for user" + params[:from]
-      puts Sanitize.clean(params[:reply_plain].gsub("\n", " ").strip)
+      puts reply
+      
+      # Save ATD
       @thought = Thought.new
-      @thought.body = Sanitize.clean(params[:reply_plain].gsub("\n", " ").strip)
+      @thought.body = reply
       @thought.user = User.where(:email => params[:from]).first
       @thought.date = DateTime.now
       
