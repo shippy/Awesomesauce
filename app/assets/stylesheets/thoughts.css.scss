@@ -1,9 +1,13 @@
 // Place all the styles related to the Thoughts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.date {font-style: italics; border-top: 1px solid black; text-align: right;}
+.date {font-style: italics; border-bottom: 1px solid #317eac; text-align: right;}
 .atd {font-size: 1.5em; line-height: 1.4em}
-.thought {text-align: center; }
+.thought {text-align: center; border: 1px solid #317eac; padding: .5em; margin: .5em 0; 
+	-webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  }
 h1 {font-size: 1.7em; }
 .new-thought {float: right; }
 
