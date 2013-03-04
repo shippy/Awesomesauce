@@ -12,7 +12,7 @@ class IncomingMailsController < ApplicationController
     if User.all.map(&:email).include? params[:from] # thanks, Adam Bray!
       
       # Manipulation of the reply
-      reply = params[:reply_plain].gsub("<3", "&lt;3") # special replacement for "<3"
+      reply = params[:reply_plain] #.gsub("<3", "&lt;3") # special replacement for "<3"
       reply = reply.split("\r\n").split("\n") # splitting by newlines
       if reply[reply.length-1].include? "aweoftoday@gmail.com" # split the top reply line
         reply = reply[0...reply.length-2]
