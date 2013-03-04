@@ -1,11 +1,13 @@
+<% emmons = Citation.new("http://psycnet.apa.org/journals/psp/84/2/377/", "2003 Emmons and McCullough", "Emmons, Robert A.; McCullough, Michael E. <b>Counting blessings versus burdens: An experimental investigation of gratitude and subjective well-being in daily life.</b> Journal of Personality and Social Psychology, Vol 84(2), Feb 2003, 377-389. doi: 10.1037/0022-3514.84.2.377") %>
 
 <div class="hero-unit">
 <h2><span class="awesomesauce">Awesomesauce</span>. Make yourself happy.</h2>
-<p>Because everybody feels down sometimes.</p>
+<p>Research in positive psychology suggests that "a conscious focus on blessings may have emotional and interpersonal benefits" <%= emmons.cite_short.html_safe %>. But for most of us, Facebook simply isn't the best outlet for counting our blessings &ndash; not all things we are grateful for are popular and/or ready for public consumption.</p>
+<p><strong><span class="awesomesauce">Awesomesauce</span> ensures that you never forget to be thankful again.</strong> We'll e-mail you every afternoon to ask, "What are you grateful today?" Whatever you respond with &ndash; text, picture, article, a YouTube video &ndash; it will archive. When you're feeling down, you'll be able to glance at the things you love about your life - and feel better again.</p>
+<p><%= link_to 'Sign up', new_user_registration_path, class: "btn btn-large btn-primary" %></p>
 </div>
-<% emmons = Citation.new("http://psycnet.apa.org/journals/psp/84/2/377/", "2003 Emmons and McCullough", "Emmons, Robert A.; McCullough, Michael E. <b>Counting blessings versus burdens: An experimental investigation of gratitude and subjective well-being in daily life.</b> Journal of Personality and Social Psychology, Vol 84(2), Feb 2003, 377-389. doi: 10.1037/0022-3514.84.2.377") %>
 
-<div class="row">
+<!--<div class="row">
   <div class="span4">
     <p>Research in positive psychology suggests that "a conscious focus on blessings may have emotional and interpersonal benefits" <%= emmons.cite_short.html_safe %> But for most of us, Facebook simply isn't the best outlet for counting our blessings &ndash; not all things we are grateful for are popular and/or ready for public consumption.</p>
     <p><strong>But we sometimes forget about the little things that make our lives good.</strong></p>
@@ -14,7 +16,7 @@
     <p><span class="awesomesauce">Awesomesauce</span> ensures that you never forget to be thankful again. We'll e-mail you every afternoon to ask, "What are you grateful today?" Whatever you respond with &ndash; text, picture, article, a YouTube video &ndash; it will archive. When you're feeling down, you'll be able to glance at the things you love about your life - and feel better again.</p>
   </div>
   <div class="span4">
-    <h3>What others are grateful for</h3>
+    <h4>Others' grateful thoughts</h4>
     <% @thoughts.last(3).each do |post| %> <p class="quote">"<%= post.body %>"</p> <% end %>
   </div>
-</div>
+</div>-->
