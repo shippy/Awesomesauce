@@ -1,5 +1,6 @@
 class ThoughtsController < ApplicationController
   before_filter :authenticate_user!
+  
   before_filter :restrict_to_development, :only => [:send_summary, :send_reminder]
   # via http://stackoverflow.com/questions/1207424/can-i-restrict-rails-controller-methods-to-development-environment
   
@@ -9,9 +10,9 @@ class ThoughtsController < ApplicationController
   def index
     # @thoughts = Thought.all
     if Ability.new(current_user).can? :manage, :all
-      @thoughts = Thought.all
+      @thoughts = Thought.all.reverse
     else
-      @thoughts = Thought.where(:user_id => current_user.id).all
+      @thoughts = Thought.where(:user_id => current_user.id).all.reverse
     end
 
     respond_to do |format|
