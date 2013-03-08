@@ -19,8 +19,12 @@ class DailyReminder < ActionMailer::Base
       template = :starter
     end
     
-    # Mail_content.where(:type => 'daily', :template => template).random
+    content = Template.where(:email_class => 'daily', :email_template => template).random
       
-    mail(:to => user.email, :subject => "What are you grateful for today?")
+    mail(:to => user.email, :subject => content.subject) do |format|
+      format.text {
+        render :text = content.body
+      }
+    end
   end
 end
