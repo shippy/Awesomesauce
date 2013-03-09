@@ -1,4 +1,6 @@
 Myapp::Application.routes.draw do
+  resources :aliases
+
   resources :templates
 
   devise_for :users

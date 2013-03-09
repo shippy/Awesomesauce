@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Email:</b>
+  <%= @alias.email %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @alias.user %>
+</p>
+
+<p>
+  <b>Verified:</b>
+  <%= @alias.verified %>
+</p>
+
+<p>
+  <b>Secret:</b>
+  <%= @alias.secret %>
+</p>
+
+
+<%= link_to 'Edit', edit_alias_path(@alias) %> |
+<%= link_to 'Back', aliases_path %>
