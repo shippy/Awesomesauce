@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130307214323) do
+ActiveRecord::Schema.define(:version => 20130309164519) do
+
+  create_table "aliases", :force => true do |t|
+    t.string   "email"
+    t.integer  "user_id"
+    t.boolean  "verified"
+    t.string   "secret"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "aliases", ["secret"], :name => "index_aliases_on_secret", :unique => true
 
   create_table "cute", :force => true do |t|
     t.string   "url"
