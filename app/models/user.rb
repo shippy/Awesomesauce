@@ -11,10 +11,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
-  # The 0..n e-mail aliases that a user can have
-  # serialize :aliases
-  
-  has_many :posts
+  has_many :aliases
+  has_many :thoughts
   
   private
     def assign_user_role

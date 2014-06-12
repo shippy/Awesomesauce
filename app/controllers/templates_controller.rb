@@ -1,4 +1,13 @@
 class TemplatesController < ApplicationController
+  before_filter :authenticate_user!
+  
+  def admin_only
+    authenticate_user!
+    unless (Ability.new(current_user).can? :manage, :all)
+      redirect_to root_path
+    end
+  end
+  
   # GET /templates
   # GET /templates.json
   def index

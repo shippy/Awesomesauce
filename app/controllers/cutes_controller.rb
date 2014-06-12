@@ -1,4 +1,6 @@
 class CutesController < ApplicationController
+  before_filter :authenticate_user!
+  
   # GET /cutes
   # GET /cutes.json
   def index
